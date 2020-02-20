@@ -19,18 +19,29 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            Chaos.run();
         }
 
-        public class Chaos
+        private class Chaos
         {
-            public double R;
-            public int itLimit = 1000;
+            private double R;
+            private int itLimit = 1000;
 
-            public Chaos()// CON
+            private Chaos()// CON
             {
 
             }
+
+            public void run() 
+            { 
+            
+            }
+
         }// public class Chaos
+
+        private private void chart2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
