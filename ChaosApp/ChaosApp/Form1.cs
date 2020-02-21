@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp1
+namespace ChaosApp
 {
     public partial class Form1 : Form
     {
@@ -17,29 +17,47 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void graphSingleRbtn_Click(object sender, EventArgs e)
         {
-            Chaos.run();
+            Chaos chaos = new Chaos(this, Convert.ToDouble(this.RInput.Text));
+            chaos.graphSingleR();
         }
 
-        private class Chaos
+        public class Chaos
         {
-            private double R;
-            private int itLimit = 1000;
 
-            private Chaos()// CON
+            Form1 form;
+            double R;
+
+            public Chaos(Form1 form, double R)// CON
             {
-
+                this.form = form;
+                this.R = R;
             }
 
-            public void run() 
-            { 
-            
+            public void graphSingleR()
+            {
+                form.statusText.Text = "graphing R value " + this.R.ToString();
             }
 
         }// public class Chaos
 
-        private private void chart2_Click(object sender, EventArgs e)
+        private void chart2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            this.statusText.Text = "ready";
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
